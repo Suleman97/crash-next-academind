@@ -1,5 +1,7 @@
+import Head from 'next/head';
 import { MongoClient } from 'mongodb';
 import MeetupList from '../components/meetups/MeetupList';
+import { Fragment } from 'react';
 
 //       'https://www.nationsonline.org/gallery/Germany/Reichstag-Parliament-Berlin.jpg',
 
@@ -8,7 +10,15 @@ import MeetupList from '../components/meetups/MeetupList';
 //       'https://mk0uncovercolor8845v.kinstacdn.com/wp-content/uploads/2017/11/Colfax-Avenue-Denver-Colorado-1600x800-1600x800.jpg',
 
 function HomePage({ meetups }) {
-  return <MeetupList meetups={meetups} />;
+  return (
+    <Fragment>
+      <Head>
+        <title>NExt Meetups</title>
+        <meta name="description" content="browse a huge list of Next MeetUps" />
+      </Head>
+      <MeetupList meetups={meetups} />;
+    </Fragment>
+  );
 }
 
 export async function getStaticProps() {
