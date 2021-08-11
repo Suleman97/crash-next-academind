@@ -46,7 +46,7 @@ export async function getStaticProps(context) {
   const meetupId = context.params.meetupId;
 
   const client = await MongoClient.connect(
-    'mongodb+srv://meetup-app:s12345@meetupapp.d2qh5.mongodb.net/meetups?retryWrites=true&w=majority'
+    'mongodb+srv://meetup-app:s 12345@meetupapp.d2qh5.mongodb.net/meetups?retryWrites=true&w=majority'
   );
 
   const db = await client.db();
